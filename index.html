@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paradoxe de Monty Hall</title>
+</head>
+<body>
+    <h1>Jeu du Paradoxe de Monty Hall</h1>
+
+    <section id="gameSection">
+        <h2>Jouer une partie</h2>
+        <p>Choisissez une porte parmi les trois :</p>
+        <div id="doors">
+            <button onclick="choisirPorte(1)">Porte 1</button>
+            <button onclick="choisirPorte(2)">Porte 2</button>
+            <button onclick="choisirPorte(3)">Porte 3</button>
+        </div>
+        <p id="infoMessage"></p>
+        <div id="options" style="display: none;">
+            <p>Le présentateur a ouvert une porte avec une chèvre. Que voulez-vous faire ?</p>
+            <button onclick="garderPorte()">Garder mon choix</button>
+            <button onclick="changerPorte()">Changer de porte</button>
+            <button onclick="choixAleatoire()">Choisir aléatoirement</button>
+        </div>
+        <div id="resultat" style="display: none;">
+            <p id="resultMessage"></p>
+            <button onclick="rejouer()">Rejouer</button>
+        </div>
+    </section>
+
+    
+    <section id="simulationSection">
+        <h2>Simuler plusieurs parties</h2>
+        <p>Choisissez une stratégie et le nombre de parties :</p>
+        <label for="strategie">Stratégie :</label>
+        <select id="strategie">
+            <option value="garder">Garder le choix initial</option>
+            <option value="changer">Changer de porte</option>
+            <option value="aleatoire">Choix aléatoire</option>
+        </select>
+        <label for="nbParties">Nombre de parties :</label>
+        <input type="number" id="nbParties" value="1000000" min="1">
+        <button onclick="lancerSimulation()">Lancer la simulation</button>
+        <p id="simulationResult"></p>
+        <button onclick="rejouerSimulation()">Rejouer simulation</button>
+    </section>
+
+    <script src="simulateGames.js"></script>
+</body>
+</html>
